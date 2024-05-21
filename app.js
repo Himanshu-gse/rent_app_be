@@ -10,22 +10,23 @@ import propertyRouter from "./src/routes/property.routes.js";
 // Load environment variables
 dotenv.config();
 
+
+// Enable all cors requests
 const app = express();
-app.use(
-  cors(
-    {
-    origin: ["https://rent-app-nine.vercel.app/"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  }
-));
+app.use(cors());
+// app.use(
+//   cors(
+//     {
+//     origin: ["https://rent-app-nine.vercel.app/"],
+//     methods: ["GET", "POST"],
+//     credentials: true,
+//   }
+// ));
 
 // Middleware for parsing JSON and urlencoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Enable all cors requests
-// app.use(cors());
 
 // const corsOptions = ;
 
