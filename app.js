@@ -19,6 +19,18 @@ app.use(express.urlencoded({ extended: true }));
 // Enable all cors requests
 app.use(cors());
 
+const corsOptions = {
+  origin: "https://rent-app-nine.vercel.app/",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+  optionsSuccessStatus: 200 // For legacy browser support
+};
+
+app.use(cors(corsOptions));
+
+// Preflight request handling for all routes
+app.options('*', cors(corsOptions));
+
 // Configure express-session
 app.use(
   session({
