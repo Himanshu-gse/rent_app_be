@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const corsOptions = {
-  origin: "https://rent-app-nine.vercel.app/",
+  origin: "https://rent-app-nine.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   optionsSuccessStatus: 200 // For legacy browser support
