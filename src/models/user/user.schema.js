@@ -81,15 +81,15 @@ userSchema.pre('save', async function (next) {
 });
 
 // Method to create JWT token
-userSchema.methods.createJWT = function () {
-  return jwt.sign(
-    { userId: this._id, name: this.firstName },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: process.env.JWT_EXPIRE,
-    }
-  );
-};
+// userSchema.methods.createJWT = function () {
+//   return jwt.sign(
+//     { userId: this._id, name: this.firstName },
+//     process.env.JWT_SECRET,
+//     {
+//       expiresIn: process.env.JWT_EXPIRE,
+//     }
+//   );
+// };
 
 // Method to compare passwords
 userSchema.methods.comparePassword = async function (candidatePassword) {
